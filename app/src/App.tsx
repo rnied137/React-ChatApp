@@ -8,12 +8,12 @@ import { Hero } from './Hero';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <OrangeBar/>
     <DonateBar/>
     <MainMenu/>
     <Hero/>
-    </div>
+    </>
   );
 }
 

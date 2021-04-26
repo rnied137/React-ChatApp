@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 background-color: black;
 padding: 15%;
 text-align: left;
+position: relative;
 span {
     font-family:Roboto;
 }
@@ -16,20 +17,20 @@ span {
 
 
 const Container = styled.div`
-width:40%;
+max-width:400px;
 
 `;
 
 const StyledText = styled.span`
 
-font-size: 2rem;
+font-size: 3rem;
 color:#FF7000;
 
 
 `;
 
 const BigText = styled.span`
-font-size: 2rem;
+font-size: 3rem;
 color: #fff;
 `;
 
@@ -50,7 +51,7 @@ export const Hero = () => {
             </StyledText>
                 <BigText> For Every Woman</BigText>
                 <SmallText>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</SmallText>
-                <Button marginTop="1rem" text="DONATE NOW" />
+                <Button marginTop="1.5rem" marginLeft="-1px" text="DONATE NOW" />
             </Container>
         </Wrapper>
     )
