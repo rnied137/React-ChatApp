@@ -23,7 +23,12 @@ export const Button: React.FunctionComponent<ButtonProps> = ({ text = "Button", 
     )
 }
 
-const StyledButton = styled.button< { marginLeft?: string, marginRight?: string, marginTop?: string, marginBottom?: string }>`
+const StyledButton = styled.button< { 
+    marginLeft?: string,
+    marginRight?: string,
+    marginTop?: string,
+    marginBottom?: string
+     }>`
 border-radius:5px;
 border: none;
 padding: 1em 1.5em;
