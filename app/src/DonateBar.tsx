@@ -44,20 +44,27 @@ const LogoCircle = styled.div`
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: rgba(212,190,150,0.6);
+  background-color: #F8F8F8;
   border-radius: 50px;
 `;
 
 const Logo = styled.img`
-  flex: 1;
+height: 27px;
+width: 31px;
   display: inline-block;
+`;
+
+const MainLogo = styled.img`
+
+margin-right: 10%;
+
 `;
 
 export const DonateBar = () => {
   return (
     <Wrapper>
       <Container>
-              <img style={{ marginRight: "10%" }} src={NGOLogo} alt="ngoo" />
+              <MainLogo src={NGOLogo} alt="ngoo" />
 
         <LogoCircle>
           <Logo src={MailLogo} alt="ngoo" />

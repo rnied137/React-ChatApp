@@ -6,7 +6,7 @@ const MenuWrapper = styled.div`
 height:61px;
 background:#333333;
 
-@media(max-width:550px){
+@media(max-width:625px){
 height: auto;
 }
 
@@ -22,7 +22,7 @@ flex-direction: row;
 flex-wrap: nowrap;
 
 
-@media(max-width:550px){
+@media(max-width:625px){
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     text-align: center;
