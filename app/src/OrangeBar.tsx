@@ -29,6 +29,14 @@ const Bar = styled.div`
     font-weight: 400;
     line-height: 21.09px;
   }
+
+
+  @media(max-width:1000px){
+    p{
+      display: none;
+    }
+
+  }
 `;
 
 const IconsContainer = styled.ul`

@@ -35,6 +35,7 @@ padding: 1em 1.5em;
 background: #FF7000;
 color: #fff;
 display: inline-block;
+max-height: 55px;
 margin-left: ${props => props.marginLeft};
 margin-right: ${props => props.marginRight};
 margin-top: ${props => props.marginTop};

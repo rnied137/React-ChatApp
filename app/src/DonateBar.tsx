@@ -58,6 +58,8 @@ const MainLogo = styled.img`
 
 margin-right: 10%;
 
+
+
 `;
 
 export const DonateBar = () => {
@@ -66,6 +68,8 @@ export const DonateBar = () => {
       <Container>
               <MainLogo src={NGOLogo} alt="ngoo" />
 
+<div>
+
         <LogoCircle>
           <Logo src={MailLogo} alt="ngoo" />
               </LogoCircle>
@@ -73,6 +77,10 @@ export const DonateBar = () => {
           <Bold>Mail:</Bold>
           <InfoText>info@ngoochairty.com</InfoText>
           </TextContainer>
+          </div>
+          <div>
+
+  
         <LogoCircle>
           <Logo src={CallLogo} alt="ngoo" />
               </LogoCircle>
@@ -82,6 +90,7 @@ export const DonateBar = () => {
         <Bold>Call us:</Bold>
                   <InfoText>+62 7100 1234</InfoText>
                   </TextContainer>
+                  </div>
         <Button marginLeft="30px" text="DONATE NOW" />
       </Container>
     </Wrapper>

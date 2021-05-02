@@ -30,21 +30,34 @@ const Placeholder = styled.div`
 
 const ProgressContainer = styled.div`
   border-radius: 15px;
-  ::-webkit-progress-bar {
-    background-color: red;
-    border-radius: 15px;
-  }
-
-  ::-webkit-progress-value {
-    background-color: #ff7000;
-    border-radius: 15px;
-  }
+ 
 `;
 
 const Progress = styled.progress`
+  width: 250px;
+  height: 10px;
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #999999;
+  border-radius: 25px;
+  &::-webkit-progress-bar {
+    //background of webkit progress
+    border-radius: 25px;
+    background-color: #999999;
+  }
+
+  &::-webkit-progress-value {
+    //bar back
+    background-color: #ff7000;
+    border-radius: 25px;
+  }
+
+  &::-moz-progress-bar {
+    background-color: #ff7000;
+  }
 `;
-export const Card = ({ title = "", text = "" }) => {
+export const Card = ({ title = "", text = "", value="80" }) => {
   return (
     <Container>
       <Placeholder />
@@ -53,7 +66,7 @@ export const Card = ({ title = "", text = "" }) => {
         <Text>{text} </Text>
       </TextContainer>
       <ProgressContainer>
-        <Progress value="80" />
+        <Progress value={value} max="100" />
       </ProgressContainer>
     </Container>
   );
