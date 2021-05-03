@@ -49,12 +49,6 @@ const Theme = ({ children }: IThemeProps) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 )
 
-const Container = styled.div`
-width: 200px;
-height: 200px;
-background-color: ${props => props.theme.colors.pink};
-`;
-
 function App() {
   return (
     <>
