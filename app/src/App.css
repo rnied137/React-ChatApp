@@ -1,6 +1,11 @@
 .App {
   text-align: center;
   background-color: #fff;
+  
+}
+
+*,*:focus,*:hover{
+  outline:none;
 }
 
 .App-logo {

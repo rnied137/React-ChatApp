@@ -6,6 +6,8 @@ import { UserProfile } from "./Components/UserProfile";
 import { ChatHeader } from "./Components/ChatHeader";
 
 import TTNorms from './Fonts/TTNorms-Bold.otf';
+import { ChatArea } from "./Components/ChatArea";
+import { ChatMessage } from "./Components/ChatMessage";
 
 const theme = {
   colors: {
@@ -23,6 +25,12 @@ const theme = {
     small:"36px",
     medium:"54px",
     big:"96px",
+  },
+  padding: {
+    pad1:"1em",
+    pad2:"2em",
+    pad4:"4em",
+    pad6:"6em"
   },
 }
 
@@ -53,6 +61,8 @@ function App() {
     <GlobalStyle/>
       <Theme>
           <ChatHeader/>
+          <ChatArea/>
+          <ChatMessage/>
       </Theme>
     </>
   );

@@ -10,7 +10,7 @@ import { BsThreeDotsVertical as DotsIcon } from 'react-icons/bs';
 
 
 const Header = styled.div`
-width: 100%;
+max-width: 100%;
 padding: 2em;
 background-color: #FAFBFF;
 border-bottom: 3px solid ${props => props.theme.colors.lightgray};
@@ -47,6 +47,7 @@ display: flex;
 align-self: center;
 justify-content: center;
 margin-right: 1em;
+box-shadow: 0px 3px 10px -6px rgba(0,0,0,0.85);
 
 >svg{
   cursor: pointer;
@@ -58,7 +59,7 @@ margin-right: 1em;
 
 const IconContainer = styled.div`
 margin-left: auto;
-margin-right: 2em;
+
 display: flex;
 flex-direction: row;
 `;
