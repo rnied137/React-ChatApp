@@ -9,12 +9,12 @@ const  Container = styled.div`
 padding-left: ${props=> props.theme.padding.pad2};
 padding-right: ${props=> props.theme.padding.pad2};
 border-top: 3px solid ${props => props.theme.colors.lightgray};
-min-height: 150px;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-max-width: 100%;
+padding-top: ${props => props.theme.padding.pad2};
+display: grid;
+grid-gap:20px;
+grid-template-columns: 40px auto 24px 40px;
+
+
 
 
 `;
@@ -25,8 +25,6 @@ const Input = styled.input`
   border: none;
   background-color: transparent;
   line-height: 30px;
-  margin-left: 1em;
-  flex: 4;
 
   &::placeholder {
     color: ${(props) => props.theme.colors.gray};
