@@ -19,7 +19,6 @@ grid-template-columns: 40px auto 24px 40px;
 
 
 
-
 `;
 
 
@@ -58,7 +57,7 @@ position: absolute;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
-transform: translateY(-110px);
+transform: translateY(-165px);
 `;
 
 
@@ -70,8 +69,9 @@ export const ChatMessage = () => {
       <Container>
         <Icon  onClick={()=>setActions(!actions)}>
           <img src={Plus} alt="More actions" />
-          { actions ? <AdditionalActions>
-            <Icon>
+        </Icon>
+        { actions ? <AdditionalActions>
+            <Icon href="http://interia.pl">
           <img src={Video} alt="Send!" />{" "}
         </Icon>
         <Icon>
@@ -82,7 +82,6 @@ export const ChatMessage = () => {
         </Icon>
 
           </AdditionalActions>:null}
-        </Icon>
         <Input type="text" placeholder="Type message here" />
         <img src={Smiley} alt="Smiling" />
         <Icon>
