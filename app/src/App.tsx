@@ -8,6 +8,7 @@ import { ChatHeader } from "./Components/ChatHeader";
 import TTNorms from './Fonts/TTNorms-Bold.otf';
 import { ChatArea } from "./Components/ChatArea";
 import { ChatMessage } from "./Components/ChatMessage";
+import { Chat } from "./Components/Chat";
 
 const theme = {
   colors: {
@@ -54,9 +55,7 @@ function App() {
     <>
     <GlobalStyle/>
       <Theme>
-          <ChatHeader/>
-          <ChatArea/>
-          <ChatMessage/>
+       <Chat/>
       </Theme>
     </>
   );

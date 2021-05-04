@@ -13,14 +13,15 @@ color: ${props=> props.isUser ? props.theme.colors.black : props.theme.colors.wh
 max-width:80%;
 display: inline-block;
 padding:30px;
-border-radius: 0 10px 10px 10px;
+border-radius: ${props=>props.isUser ? '10px 10px 0 10px' : '0 10px 10px 10px'};
 margin-top:1em;
 border: ${props=>props.isUser ? `1px solid rgba(112, 124, 151, 0.25)` : null };
 align-self: ${props=>props.isUser ? `flex-end`:`flex-start`};
+margin-right: 1em;
 `;
 
 
-interface IMessageProps  {
+ export interface IMessageProps  {
     children?:string | React.ReactNode;
     isUser?: Boolean;
 };
