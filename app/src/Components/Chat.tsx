@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
 import { ChatHeader } from "./ChatHeader";
-import { ChatArea } from "./ChatArea";
+import { ChatArea, ICharAreaProps } from "./ChatArea";
 import { ChatMessage } from "./ChatMessage";
-
+import { IMessageProps } from './Message';
 import styled from 'styled-components';
 
 
@@ -13,11 +13,44 @@ const Container = styled.div`
 `;
 
 export const Chat = () => {
-    return (
+  const [messages, setMessages] = useState<IMessageProps[]>([
+    {
+      children: "This is chat message",
+      isUser:false,
+    },
+    {
+      children: "This is chat message2",
+      isUser:true,
+    },
+    {
+      children: "This is chat message3",
+      isUser:false,
+    },
+    {
+      children: "This is chat message4",
+      isUser:false,
+    },
+    {
+      children: "This is chat message5",
+      isUser:true,
+    },
+    {
+      children: "This is chat message5",
+      isUser: false,
+    },
+    {
+      children: "This is chat message6",
+      isUser:true,
+    },
+  ])
+  
+  return (
         <Container>
           <ChatHeader/>
-          <ChatArea/>
-          <ChatMessage/>
+      <ChatArea messages={messages}/>
+      <ChatMessage setMessages={setMessages}
+                   messages={messages}
+                   />
         </Container>
     )
 }

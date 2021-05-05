@@ -7,6 +7,9 @@ import Picture from '../SVG/Picture.svg';
 import Attachment from '../SVG/Attachment.svg';
 import Video from '../SVG/Video.svg';
 
+import { IMessageProps } from './Message';
+import { ICharAreaProps } from './ChatArea';
+
 const  Container = styled.div`
 
 padding-left: ${props=> props.theme.padding.pad2};
@@ -61,9 +64,29 @@ transform: translateY(-165px);
 `;
 
 
-export const ChatMessage = () => {
+type ChatMessageProps = {
+  setMessages: React.Dispatch<React.SetStateAction<IMessageProps[]>>
+}
+
+type Props = ChatMessageProps & ICharAreaProps;
+
+export const ChatMessage = ({setMessages, messages}:Props) => {
 
 
+  const [children, setMessage] = useState("");
+  const handleMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { target } = e;
+    if (target) {
+      const message = e.target.value;
+      setMessage(message);
+      }
+}
+  const handleSend = () => {
+    if (children.length === 0) return;
+    const isUser = false;
+    const myMessage = { children, isUser };
+  setMessages([myMessage])
+}
   const [actions, setActions] = useState(false);
     return (
       <Container>
@@ -82,9 +105,9 @@ export const ChatMessage = () => {
         </Icon>
 
           </AdditionalActions>:null}
-        <Input type="text" placeholder="Type message here" />
+        <Input type="text" placeholder="Type message here" onChange={(e)=>handleMessage(e)}/>
         <img src={Smiley} alt="Smiling" />
-        <Icon>
+        <Icon onClick={()=>handleSend()}>
           <img src={Enter} alt="Send!" />{" "}
         </Icon>
       </Container>

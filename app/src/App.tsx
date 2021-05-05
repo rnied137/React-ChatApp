@@ -1,13 +1,11 @@
 import React from "react";
 import "./App.css";
 
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import { UserProfile } from "./Components/UserProfile";
-import { ChatHeader } from "./Components/ChatHeader";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+
 
 import TTNorms from './Fonts/TTNorms-Bold.otf';
-import { ChatArea } from "./Components/ChatArea";
-import { ChatMessage } from "./Components/ChatMessage";
+
 import { Chat } from "./Components/Chat";
 
 const theme = {

@@ -22,7 +22,7 @@ margin-right: 1em;
 
 
  export interface IMessageProps  {
-    children?:string | React.ReactNode;
+    children?:string
     isUser?: Boolean;
 };
 
