@@ -2,13 +2,30 @@ import React from 'react'
 
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    text?: string;
+    marginLeft?: string;
+    marginRight?: string;
+    marginTop?: string;
+    marginBottom?: string;
+};
+
+
+const StyledButton = styled.button< { 
+    marginLeft?: string,
+    marginRight?: string,
+    marginTop?: string,
+    marginBottom?: string
+     }>`
+     
 border-radius:5px;
 border: none;
 padding: 1em 1.5em;
 background: #FF7000;
 color: #fff;
 display: inline-block;
+max-height: 55px;
 margin-left: ${props => props.marginLeft};
 margin-right: ${props => props.marginRight};
 margin-top: ${props => props.marginTop};

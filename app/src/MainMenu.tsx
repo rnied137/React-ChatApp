@@ -5,6 +5,9 @@ import styled from 'styled-components';
 const MenuWrapper = styled.div`
 height:61px;
 background:#333333;
+@media(max-width:625px){
+height: auto;
+}
 
 
 `;
@@ -15,6 +18,15 @@ height: 100%;
 display: flex;
 align-items: center;
 flex-direction: row;
+flex-wrap: nowrap;
+
+
+@media(max-width:625px){
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    text-align: center;
+    margin:0%;
+}
 
 `;
 
@@ -24,6 +36,7 @@ list-style-type: none;
 color: #fff;
 line-height: 61px;
 margin-right: 40px;
+height: 100%;
 
 &:hover {
     color: black;
@@ -50,7 +63,19 @@ export const MainMenu = () => {
                     Home
                 </MenuItem>
                 <MenuItem>
-                    Home
+                    About
+                </MenuItem>
+                <MenuItem>
+                    Causes
+                </MenuItem>
+                <MenuItem>
+                    Pages
+                </MenuItem>
+                <MenuItem>
+                    Events
+                </MenuItem>
+                <MenuItem>
+                 Contact
                 </MenuItem>
             </Menu>
         </MenuWrapper>
