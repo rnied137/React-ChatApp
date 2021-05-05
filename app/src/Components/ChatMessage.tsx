@@ -65,12 +65,11 @@ transform: translateY(-165px);
 
 
 type ChatMessageProps = {
+  messages: IMessageProps[];
   setMessages: React.Dispatch<React.SetStateAction<IMessageProps[]>>
 }
 
-type Props = ChatMessageProps & ICharAreaProps;
-
-export const ChatMessage = ({setMessages, messages}:Props) => {
+export const ChatMessage = ({setMessages, messages}:ChatMessageProps) => {
 
 
   const [children, setMessage] = useState("");
@@ -85,7 +84,7 @@ export const ChatMessage = ({setMessages, messages}:Props) => {
     if (children.length === 0) return;
     const isUser = false;
     const myMessage = { children, isUser };
-  setMessages([myMessage])
+  setMessages([...messages, myMessage])
 }
   const [actions, setActions] = useState(false);
     return (
