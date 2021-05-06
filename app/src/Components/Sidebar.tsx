@@ -2,26 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import { UserProfile } from './UserProfile';
 
-import { ReactComponent as HomeIcon } from '../SVG/HomeIcon.svg';
-import { ReactComponent as ContactsIcon } from '../SVG/ContactsIcon.svg';
-import { ReactComponent as ChatIcon } from '../SVG/ChatIcon.svg';
+import { ReactComponent as HomeIcon } from '../SVG/SidebarIcons/grid.svg';
+import { ReactComponent as ContactsIcon } from '../SVG/SidebarIcons/person.svg';
+import { ReactComponent as NotificationsIcon } from '../SVG/SidebarIcons/bell.svg';
+import { ReactComponent as SettingsIcon } from '../SVG/SidebarIcons/settings.svg';
+import { ReactComponent as CalendarIcon } from '../SVG/SidebarIcons/calendar.svg';
+import { ReactComponent as LogoutIcon } from '../SVG/SidebarIcons/logout.svg';
 
 
 
 
-const Container = styled.div`
-width:400px;
-display: flex;
-flex-direction: column;
-justify-content: center;
+const Container = styled.aside`
+  height: 100vh;
+  width: 300px;
 
-&:last-child
-{
-    background: red;
-    color: yellow;
-    align-self: flex-end;
-   
-}
+
+  &>:last-child {
+      position: relative;
+    top:30%;
+  
+  }
 `;
 
 const StyledProfile = styled(UserProfile)`
@@ -32,7 +32,6 @@ padding: 2em 1em;
 text-decoration: none;
 display: flex;
 align-items: center;
-height: 100%;
 color: ${props => props.theme.colors.gray};
 
 
@@ -72,18 +71,23 @@ export const Sidebar = () => {
 
 
             <Link href="interia.pl">
-            <ChatIcon/>
+            <NotificationsIcon/>
                 <span>CHAT</span>
             </Link>
 
 
             <Link href="interia.pl">
-            <HomeIcon/>
+            <CalendarIcon/>
                 <span>NOTIFICATIONS</span>
             </Link>
             <Link href="interia.pl">
-            <HomeIcon/>
-                <span>LAST</span>
+            <SettingsIcon/>
+                <span>SETTINGS</span>
+            </Link>
+
+            <Link href="interia.pl">
+            <LogoutIcon/>
+                <span>LOGOUT</span>
             </Link>
         </Container>
     )

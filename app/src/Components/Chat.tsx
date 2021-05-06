@@ -9,7 +9,9 @@ import styled from 'styled-components';
 
 
 const Container = styled.div`
-max-width:500px;
+max-width:700px;
+border: 2px solid ${props=>props.theme.colors.lightgray};
+flex:2;
 `;
 
 export const Chat = () => {

@@ -8,14 +8,10 @@ import Attachment from '../SVG/Attachment.svg';
 import Video from '../SVG/Video.svg';
 
 import { IMessageProps } from './Message';
-import { ICharAreaProps } from './ChatArea';
 
 const  Container = styled.div`
-
-padding-left: ${props=> props.theme.padding.pad2};
-padding-right: ${props=> props.theme.padding.pad2};
+padding: ${props=> props.theme.padding.pad2};
 border-top: 3px solid ${props => props.theme.colors.lightgray};
-padding-top: ${props => props.theme.padding.pad2};
 display: grid;
 grid-gap:20px;
 grid-template-columns: 40px auto 24px 40px;

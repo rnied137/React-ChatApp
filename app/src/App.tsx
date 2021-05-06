@@ -9,6 +9,8 @@ import TTNorms from './Fonts/TTNorms-Bold.otf';
 import { Chat } from "./Components/Chat";
 import { Sidebar } from "./Components/Sidebar";
 
+import styled from 'styled-components';
+
 const theme = {
   colors: {
     black: "#0D1C2E",
@@ -49,14 +51,24 @@ const Theme = ({ children }: IThemeProps) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 )
 
+
+const Container = styled.div`
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+
+`;
 function App() {
   return (
     <>
     <GlobalStyle/>
       <Theme>
+      <Container>
 
+ 
         <Sidebar />
         <Chat/> 
+        </Container>
       </Theme>
     </>
   );
