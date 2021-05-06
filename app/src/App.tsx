@@ -7,6 +7,7 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 import TTNorms from './Fonts/TTNorms-Bold.otf';
 
 import { Chat } from "./Components/Chat";
+import { Sidebar } from "./Components/Sidebar";
 
 const theme = {
   colors: {
@@ -53,7 +54,9 @@ function App() {
     <>
     <GlobalStyle/>
       <Theme>
-       <Chat/>
+
+        <Sidebar />
+        <Chat/> 
       </Theme>
     </>
   );
