@@ -10,6 +10,7 @@ import { Chat } from "./Components/Chat";
 import { Sidebar } from "./Components/Sidebar";
 
 import styled from 'styled-components';
+import { RecentChats } from "./Components/RecentChats";
 
 const theme = {
   colors: {
@@ -56,6 +57,7 @@ const Container = styled.div`
 display: flex;
 flex-direction: row;
 align-items: flex-start;
+background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
 
 `;
 function App() {
@@ -66,8 +68,9 @@ function App() {
       <Container>
 
  
-        <Sidebar />
-        <Chat/> 
+          <Sidebar />
+          <RecentChats/>
+         {/* <Chat/>  */}
         </Container>
       </Theme>
     </>

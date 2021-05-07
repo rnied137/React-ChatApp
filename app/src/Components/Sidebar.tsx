@@ -8,6 +8,7 @@ import { ReactComponent as NotificationsIcon } from '../SVG/SidebarIcons/bell.sv
 import { ReactComponent as SettingsIcon } from '../SVG/SidebarIcons/settings.svg';
 import { ReactComponent as CalendarIcon } from '../SVG/SidebarIcons/calendar.svg';
 import { ReactComponent as LogoutIcon } from '../SVG/SidebarIcons/logout.svg';
+import { ReactComponent as ChatIcon } from '../SVG/SidebarIcons/chat.svg';
 
 
 
@@ -71,11 +72,15 @@ export const Sidebar = () => {
 
 
             <Link href="interia.pl">
-            <NotificationsIcon/>
+            <ChatIcon/>
                 <span>CHAT</span>
             </Link>
 
 
+            <Link href="interia.pl">
+            <NotificationsIcon/>
+                <span>NOTIFICATIONS</span>
+            </Link>
             <Link href="interia.pl">
             <CalendarIcon/>
                 <span>NOTIFICATIONS</span>

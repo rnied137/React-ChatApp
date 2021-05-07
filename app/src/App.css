@@ -1,8 +1,7 @@
 .App {
   text-align: center;
-  background-color: #fff;
-  background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
-  
+
+  background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);  
 }
 
 *,*:focus,*:hover{
