@@ -34,7 +34,7 @@ export const UserContextProvider = (props:IProps) => {
     });
 
     const setCurrentUserHandler=(user:string)=> {
-        setUserContext({...userContext,isAuth:true,username:user})
+        setUserContext({...userContext,isAuth:!userContext.isAuth,username:user})
         console.log('aaaa')
         console.log(userContext.isAuth)
         console.log(userContext.username)

@@ -11,10 +11,11 @@ import { Sidebar } from "./Components/Sidebar";
 
 import styled from 'styled-components';
 import { RecentChats } from "./Components/RecentChats";
-import { UserContextProvider } from './Providers/UserContextProvider';
 
 import UserContext from './Providers/UserContextProvider';
+
 import { useContext } from 'react';
+import { Test } from "./Test";
 
 const theme = {
   colors: {
@@ -70,27 +71,28 @@ background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
 function App() {
 
   const userContext = useContext(UserContext);
+  const { setCurrentUser } = useContext(UserContext)
 
-  const tryIt=()=>{
+  const tryIt = () => {
     console.log("Trying");
-    userContext.setCurrentUser("magda");
+    setCurrentUser("magda");
 
   }
   return (
     <>
       <GlobalStyle />
       <Theme>
-        <UserContextProvider>
-          <Container>
-            <button style={{width:"300px",height:"200px"}} onClick={()=>tryIt()}></button>
-            <p>{userContext.username}</p>
+
+        <Container>
+          <button style={{ width: "300px", height: "200px" }} onClick={() => tryIt()}></button>
+          <p>{userContext.username}</p>
           <Sidebar />
-            {userContext.isAuth ?  <> <RecentChats />
+          {userContext.isAuth ? <> <RecentChats />
             <Chat /></> : <div>Not logged get the fuck out!</div>}
-          
-          
-          </Container>
-        </UserContextProvider>
+
+
+        </Container>
+
       </Theme>
     </>
   );
