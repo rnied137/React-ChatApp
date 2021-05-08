@@ -12,7 +12,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     marginBottom?: string;
 };
 
-export const Button: React.FunctionComponent<ButtonProps> = ({ text = "Button", marginLeft = "5px", marginRight = "0px", marginTop = "0px", marginBottom = "0px" }) => {
+export const ButtonExternal: React.FunctionComponent<ButtonProps> = ({ text = "Button", marginLeft = "5px", marginRight = "0px", marginTop = "0px", marginBottom = "0px" }) => {
     return (
         <StyledButton marginLeft={marginLeft}
             marginRight={marginRight}
