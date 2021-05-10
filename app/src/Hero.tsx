@@ -1,7 +1,6 @@
 import React from "react";
 
 import styled from "styled-components";
-import { ButtonExternal } from "./SmallComponents/ButtonExternal";
 
 import {
   FaArrowCircleLeft as ArrowLeft,
@@ -74,7 +73,6 @@ export const Hero = () => {
           Excepteur sint occaecat cupidatat non proident sunt in culpa qui
           officia deserunt mollit anim id est laborum.
         </SmallText>
-        <ButtonExternal marginTop="1.5rem" marginLeft="-1px" text="DONATE NOW" />
       </Container>
     </Wrapper>
   );

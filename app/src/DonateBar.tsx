@@ -1,7 +1,6 @@
 import React from "react";
 
 import styled from "styled-components";
-import { ButtonExternal } from "./SmallComponents/ButtonExternal";
 import NGOLogo from "./SVG/NGOO.svg";
 import CallLogo from "./SVG/Call.svg";
 import MailLogo from "./SVG/Mail.svg";
@@ -91,7 +90,6 @@ export const DonateBar = () => {
                   <InfoText>+62 7100 1234</InfoText>
                   </TextContainer>
                   </div>
-        <ButtonExternal marginLeft="30px" text="DONATE NOW" />
       </Container>
     </Wrapper>
   );
