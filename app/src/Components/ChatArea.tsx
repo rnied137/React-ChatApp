@@ -13,7 +13,7 @@ const ChatVisibleContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 500px;
+  height: calc(100vh - 295px);
   overflow-y: scroll;
 
   &::-webkit-scrollbar {

@@ -12,19 +12,13 @@ import { ReactComponent as ChatIcon } from '../SVG/SidebarIcons/chat.svg';
 import UserContext from '../Providers/UserContextProvider';
 
 
+//TODO: ADD margin to last item
 
 const Container = styled.aside`
   height: 100vh;
   width: 200px;
   display: inline-block;
   vertical-align: top;
-
-
-  &>:last-child {
-      position: relative;
-    top:30%;
-  
-  }
 `;
 
 const StyledProfile = styled(UserProfile)`
