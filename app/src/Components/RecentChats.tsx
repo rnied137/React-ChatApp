@@ -6,8 +6,11 @@ import { ReactComponent as PlusIcon }  from '../SVG/PlusButton.svg';
 import { ReactComponent as SearchIcon }  from '../SVG/Search.svg';
 import { UserProfile } from './UserProfile';
 const Container = styled.div`
-height: 100vh;
-width:  400px;
+max-width:400px;
+
+display: inline-block;
+vertical-align: top;
+margin-left: 1em;
 `;
 
 const StyledButton = styled.button`
@@ -32,10 +35,8 @@ margin-left: 5px;
 const StyledSearch = styled.div`
 position: relative;
 &>input {
-
-
-width: 100%;
-padding:1.5em 3.5em;
+width: 80%;
+padding:1.5em 0;
 color: ${props => props.theme.colors.gray};
 color: ${props => props.theme.colors.white};
 border: none;
@@ -54,7 +55,6 @@ color: ${props=>props.theme.colors.gray};
 
 
 const Card = styled.div`
-
 background: ${props => props.theme.colors.white};
 padding: 2em;
 margin: 1em 0;

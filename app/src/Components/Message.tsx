@@ -24,9 +24,10 @@ margin-right: 1em;
  export interface IMessageProps  {
     children?:string
     isUser?: Boolean;
+    ref?:HTMLSpanElement;
 };
 
-export const Message: React.FC<IMessageProps> = ({children, isUser=false}) => {
+export const Message: React.FC<IMessageProps> = ({children,ref=null, isUser=false}) => {
     return (
         <Container isUser={isUser}>
             {children}

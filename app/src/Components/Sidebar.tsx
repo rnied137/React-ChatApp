@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
 import { UserProfile } from './UserProfile';
 
@@ -9,13 +9,15 @@ import { ReactComponent as SettingsIcon } from '../SVG/SidebarIcons/settings.svg
 import { ReactComponent as CalendarIcon } from '../SVG/SidebarIcons/calendar.svg';
 import { ReactComponent as LogoutIcon } from '../SVG/SidebarIcons/logout.svg';
 import { ReactComponent as ChatIcon } from '../SVG/SidebarIcons/chat.svg';
-
+import UserContext from '../Providers/UserContextProvider';
 
 
 
 const Container = styled.aside`
   height: 100vh;
-  width: 300px;
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
 
 
   &>:last-child {
@@ -40,6 +42,7 @@ color: ${props => props.theme.colors.gray};
     color: ${props => props.theme.colors.blue};
     &>svg {
         stroke:${props => props.theme.colors.blue};
+        fill:${props => props.theme.colors.blue};
     }
 }
 
@@ -47,6 +50,7 @@ color: ${props => props.theme.colors.gray};
     color: ${props => props.theme.colors.blue};
     &>svg {
         stroke:${props => props.theme.colors.blue};
+        fill:${props => props.theme.colors.blue};
     }
 }
 &>svg {
@@ -57,6 +61,8 @@ margin: auto 15px ;
 
 
 export const Sidebar = () => {
+
+    const userLoggedContext = useContext(UserContext)
     return (
         <Container>
             <StyledProfile size="96px"/>
@@ -90,7 +96,7 @@ export const Sidebar = () => {
                 <span>SETTINGS</span>
             </Link>
 
-            <Link href="interia.pl">
+            <Link onClick={()=>userLoggedContext.logoutUser()}>
             <LogoutIcon/>
                 <span>LOGOUT</span>
             </Link>

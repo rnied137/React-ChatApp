@@ -2,10 +2,11 @@ import { createContext, useState} from 'react';
 
 
  const UserContext = createContext<ContextFunction>({
-    isAuth: false,
+    isAuth: true,
     username:'Feliciana',
     userimage:'https://cdn.galleries.smcloud.net/t/galleries/gf-emK6-Xbp2-JSAF_m-jak-milosc-odcinek-1406-joasia-barbara-kurdej-szatan-664x442-nocrop.jpg',
-    setCurrentUser: ()=>{}
+    setCurrentUser: ()=>{},
+    logoutUser: ()=>{}
 });
 
 
@@ -18,6 +19,7 @@ userimage:string,
 
 interface ContextFunction extends IuserContext{
     setCurrentUser: (user:string)=>void;
+    logoutUser: ()=>void;
 }
 
 interface IProps {
@@ -27,7 +29,7 @@ interface IProps {
 export const UserContextProvider = (props:IProps) => {
 
     const [ userContext, setUserContext ] = useState<IuserContext>({
-        isAuth:false,
+        isAuth:true,
         username:'',
         userimage:'',
     
@@ -41,12 +43,14 @@ export const UserContextProvider = (props:IProps) => {
         console.log(userContext.isAuth)
     }
 
+    const logoutUserHandler=()=>setUserContext({...userContext, isAuth: false});
+
     const context = {
         isAuth: userContext.isAuth,
         username: userContext.username,
         userimage: userContext.userimage,
         setCurrentUser:setCurrentUserHandler,
-
+        logoutUser:logoutUserHandler,
     }
     return (
         <UserContext.Provider value={context}>

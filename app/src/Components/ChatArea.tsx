@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
 import { Message, IMessageProps } from "./Message";
@@ -40,10 +40,28 @@ export interface ICharAreaProps {
 export const ChatArea = ({
   messages = []
 }:ICharAreaProps) => {
+
+const chatScrollRef = useRef<HTMLDivElement>(null);
+
+const scrollToBottom=()=> {
+  
+console.log(chatScrollRef.current);  
+  // chatScrollRef.current?.scrollIntoView({block:"end", behavior: "smooth",});
+const scrollHeight = chatScrollRef.current?.scrollHeight;
+  chatScrollRef.current?.scrollTo({top:scrollHeight, behavior: "smooth"});
+}
+useEffect(()=>{
+
+  scrollToBottom();
+})
+  
   return (
     <Chat>
-      <ChatVisibleContent>
-        {messages.map((message) => (
+      <ChatVisibleContent ref={chatScrollRef}  >
+        
+        {messages.map((message, index) =>  index===messages.length-1 ? (
+          <Message  isUser={message.isUser}>{message.children}</Message>
+        ):(
           <Message isUser={message.isUser}>{message.children}</Message>
         ))}
       </ChatVisibleContent>

@@ -47,6 +47,12 @@ interface IThemeProps {
 }
 
 const GlobalStyle = createGlobalStyle`
+* {
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
 @font-face {
 font-family: TTNorms;
 src: url(${TTNorms}) format('truetype');
@@ -59,11 +65,10 @@ const Theme = ({ children }: IThemeProps) => (
 
 
 const Container = styled.div`
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
 
+
+background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
+box-sizing: border-box;
 `;
 
 
@@ -71,21 +76,13 @@ background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
 function App() {
 
   const userContext = useContext(UserContext);
-  const { setCurrentUser } = useContext(UserContext)
 
-  const tryIt = () => {
-    console.log("Trying");
-    setCurrentUser("magda");
-
-  }
   return (
     <>
       <GlobalStyle />
       <Theme>
 
         <Container>
-          <button style={{ width: "300px", height: "200px" }} onClick={() => tryIt()}></button>
-          <p>{userContext.username}</p>
           <Sidebar />
           {userContext.isAuth ? <> <RecentChats />
             <Chat /></> : <div>Not logged get the fuck out!</div>}
