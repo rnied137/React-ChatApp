@@ -1,0 +1,6 @@
+io.listen(3500, {
+  cors: {
+  origin: ["http://localhost:3000"
+  }
+
+});
