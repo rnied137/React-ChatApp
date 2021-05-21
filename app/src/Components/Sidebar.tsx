@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { UserProfile } from './UserProfile';
 
@@ -59,39 +59,39 @@ export const Sidebar = () => {
     const userLoggedContext = useContext(UserContext)
     return (
         <Container>
-            <StyledProfile size="96px"/>
+            <StyledProfile size="96px" />
             <Link href="interia.pl">
-            <HomeIcon/>
+                <HomeIcon />
                 <span>HOME</span>
             </Link>
 
             <Link href="interia.pl">
-                <ContactsIcon/>
+                <ContactsIcon />
                 <span>CONTACTS</span>
             </Link>
 
 
             <Link href="interia.pl">
-            <ChatIcon/>
+                <ChatIcon />
                 <span>CHAT</span>
             </Link>
 
 
             <Link href="interia.pl">
-            <NotificationsIcon/>
+                <NotificationsIcon />
                 <span>NOTIFICATIONS</span>
             </Link>
             <Link href="interia.pl">
-            <CalendarIcon/>
+                <CalendarIcon />
                 <span>NOTIFICATIONS</span>
             </Link>
             <Link href="interia.pl">
-            <SettingsIcon/>
+                <SettingsIcon />
                 <span>SETTINGS</span>
             </Link>
 
-            <Link onClick={()=>userLoggedContext.logoutUser()}>
-            <LogoutIcon/>
+            <Link onClick={() => userLoggedContext.logoutUser()}>
+                <LogoutIcon />
                 <span>LOGOUT</span>
             </Link>
         </Container>

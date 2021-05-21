@@ -33,9 +33,18 @@ const UserImage = styled(UserProfile)`
 margin-right: 1em;
 `
 
+const Status = styled.div`
+width: 32px;
+height: 32px;
+background-color: ${props => props.color};
+border-radius: 100%;
+position: relative;
+right:15px;
+`;
+
 
 type IIconWrapperProps = {
-  src?:string;
+  src?: string;
 }
 
 const IconWrapper = styled.a<IIconWrapperProps>`
@@ -64,9 +73,16 @@ display: flex;
 flex-direction: row;
 `;
 
-export const ChatHeader = () => {
+interface IChatHeader {
+  connectedToServer: boolean | undefined;
+}
+
+
+export const ChatHeader = ({ connectedToServer = false }: IChatHeader) => {
   return (
     <Header>
+      {connectedToServer ? (<Status color="green" />) :
+        (<Status color="red" />)}
       <UserImage size="54px" />
       <Text>
         <Heading>Nika Jerrardo</Heading>
