@@ -67,7 +67,7 @@ box-shadow: 0px 3px 10px -6px rgba(0,0,0,0.85);
 `;
 
 const IconContainer = styled.div`
-margin-left: auto;
+margin-left: 10px;
 
 display: flex;
 flex-direction: row;

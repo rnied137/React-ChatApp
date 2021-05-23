@@ -15,7 +15,6 @@ import { RecentChats } from "./Components/RecentChats";
 import UserContext from './Providers/UserContextProvider';
 
 import { useContext } from 'react';
-import { Test } from "./Test";
 
 const theme = {
   colors: {
@@ -84,8 +83,8 @@ function App() {
 
         <Container>
           <Sidebar />
-          {userContext.isAuth ? <> <RecentChats />
-            <Chat /></> : <div>Not logged get the fuck out!</div>}
+          {userContext.isAuth ? <> <RecentChats key="1" />
+            <Chat key="2" /></> : <div>Not logged get the fuck out!</div>}
 
 
         </Container>

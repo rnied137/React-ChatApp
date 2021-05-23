@@ -2,8 +2,8 @@ import React from 'react'
 
 import styled from 'styled-components';
 
-import { ReactComponent as PlusIcon }  from '../SVG/PlusButton.svg';
-import { ReactComponent as SearchIcon }  from '../SVG/Search.svg';
+import { ReactComponent as PlusIcon } from '../SVG/PlusButton.svg';
+import { ReactComponent as SearchIcon } from '../SVG/Search.svg';
 import { UserProfile } from './UserProfile';
 const Container = styled.div`
 max-width:400px;
@@ -41,7 +41,7 @@ color: ${props => props.theme.colors.gray};
 color: ${props => props.theme.colors.white};
 border: none;
 border-radius: 5px;
-color: ${props=>props.theme.colors.gray};
+color: ${props => props.theme.colors.gray};
 
 }
 &>svg {
@@ -88,39 +88,39 @@ display: flex;
 
 const Posts = [
     {
-    userimage: "https://picsum.photos/200/300?random=1",
-    username: "Joel Havier",
-    timestamp: "1 min ago",
-    lastMessage: "Cicero famously orated against his political opponent Lucius Sergius Catilina.",
-    
+        userimage: "https://picsum.photos/200/300?random=1",
+        username: "Joel Havier",
+        timestamp: "1 min ago",
+        lastMessage: "Cicero famously orated against his political opponent Lucius Sergius Catilina.",
+
     },
     {
         userimage: "https://picsum.photos/200/300?random=2",
         username: "Amanda Cris",
         timestamp: "Now",
         lastMessage: "You have a mistake in html: input is self-closing tag and cannot have children like you do ",
-        
+
     },
     {
         userimage: "https://picsum.photos/200/300?random=3",
         username: "Cristien Oleg",
         timestamp: "1 hour ago",
         lastMessage: "TextInput with an icon and clear button. TextInput is a controlled component. This means that the visible text will always match the contents of the value prop.",
-        
+
     },
     {
         userimage: "https://picsum.photos/200/300?random=4",
         username: "Joel Havier",
         timestamp: "1 min ago",
         lastMessage: "Each input component also accepts all react-final-form FieldProps, including: ... initialValue, Optional, mixed, -, Value to be set when the property is null or undefined",
-        
+
     },
     {
         userimage: "https://picsum.photos/200/300?random=5",
         username: "Amelia Prosecco",
         timestamp: "32 min ago",
         lastMessage: "Javascript answers related to “react js text input with icon”. bootstrap icons react ",
-        
+
     },
 
 
@@ -129,26 +129,26 @@ export const RecentChats = () => {
     return (
         <Container>
             <StyledButton>
-                <PlusIcon/> <span>Create New Chat</span>
+                <PlusIcon /> <span>Create New Chat</span>
             </StyledButton>
-            
+
             <StyledSearch>
-                <input type="text"/>
-            <SearchIcon/>
+                <input type="text" />
+                <SearchIcon />
             </StyledSearch>
 
 
             {Posts.map((post, index) => (
-                <Card>
+                <Card key={index}>
                     <CardHeader>
-             
-                    <UserProfile src={post.userimage} size="36px" />
-                    <h3>{post.username}</h3>
+
+                        <UserProfile src={post.userimage} size="36px" />
+                        <h3>{post.username}</h3>
                         <span>{post.timestamp}</span>
-                                   
+
                     </CardHeader>
                     <p>{post.lastMessage}</p>
-            </Card>))}
+                </Card>))}
         </Container>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 
 import { ChatHeader } from "./ChatHeader";
@@ -58,9 +58,10 @@ export const Chat = () => {
     },
   ])
 
-  const onConnectionStateUpdate = () => {
-    setConnParams({ ...connParams, connected: socket.connected })
-  }
+  const onConnectionStateUpdate = useCallback(
+    () => {
+      setConnParams({ ...connParams, connected: socket.connected })
+    }, [connParams]);
 
 
 
@@ -70,18 +71,23 @@ export const Chat = () => {
 
   }
 
+  const onConnectionError = () => {
+    console.log('Socket connection error');
+  }
+
 
   useEffect(() => {
     socket.on('connect', () => onConnectionStateUpdate());
     socket.on('disconnect', () => onConnectionStateUpdate());
     socket.on('message', (content) => onMessage(content));
+    socket.on('connect_error', () => onConnectionError());
 
     return (() => {
       socket.off('connect');
       socket.off('disconnect');
       socket.off('message');
     });
-  }, []);
+  }, [onConnectionStateUpdate]);
 
   return (
     <Container>
